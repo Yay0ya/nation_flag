@@ -6,19 +6,19 @@ var resizes = document.querySelectorAll('.resize');
 
 for (var j=0; j<resizes.length; j++) {
   // console.log(resizes[j].style)
-  console.log('width:', resizes[j].style.width);
+  // console.log('width:', resizes[j].style.width);
   resizes[j].style.width=parseInt(resizes[j].style.width)*scaleW+'px';
-  console.log('resize width:', resizes[j].style.width);
-  console.log('height:', resizes[j].style.height);
+  // console.log('resize width:', resizes[j].style.width);
+  // console.log('height:', resizes[j].style.height);
   resizes[j].style.height=parseInt(resizes[j].style.height)*scaleH+'px';
-  console.log('resize height:', resizes[j].style.height);
+  // console.log('resize height:', resizes[j].style.height);
   resizes[j].style.top=parseInt(resizes[j].style.top)*scaleH+'px';
   resizes[j].style.left=parseInt(resizes[j].style.left)*scaleW+'px';
   resizes[j].style.bottom=parseInt(resizes[j].style.bottom)*scaleH+'px';
   resizes[j].style.right=parseInt(resizes[j].style.right)*scaleW+'px';
 
   resizes[j].style.fontSize=parseInt(resizes[j].style.fontSize)*scaleW+'px';
-  resizes[j].style.fontSize=parseInt(resizes[j].style.fontSize)*scaleH+'px';
+  resizes[j].style.lineHeight=parseInt(resizes[j].style.lineHeight)*scaleH+'px';
 }
 
 // 初始化Swiper
@@ -35,6 +35,8 @@ var mySwiper = new Swiper ('.swiper-container', {
   onSlideChangeEnd(swiper) {
     // 每个slide切换结束时也运行当前slide动画
     swiperAnimate(swiper);
+    // console.log(swiper);
+    console.log(swiper.activeIndex);
   },
   onTransitionEnd(swiper) {
     swiperAnimate(swiper);
